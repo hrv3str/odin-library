@@ -16,6 +16,10 @@
     box-shadow: 0px 0px 3px var(--col-fourth);
 }
 
+.rounded {
+    border-radius: 2rem;
+}
+
 body {
     background: url(./images/background.jpeg);
     padding: 0;
@@ -23,6 +27,7 @@ body {
     box-sizing: border-box;
     overflow: hidden;
     font-family: var(--font-exo-two);
+    color: var(--col-fourth);
 }
 
 #header {
@@ -32,4 +37,33 @@ body {
     background-color: var(--col-first);
     top: 0%;
     left: 0%;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: center;
+}
+
+h1 {
+    margin-left: 3rem;
+    font-size: 3rem;
+}
+
+p {
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#add-button {
+    margin-right: 3rem;
+    width: fit-content;
+    height: fit-content;
+    font-size: 2rem;
+    padding: 1rem 2rem;
+    font-weight: 800;
+}
+
+#add-button svg {
+    stroke-width: 3px;
 }
