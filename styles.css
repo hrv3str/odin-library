@@ -4,5 +4,32 @@
     --font-orbitron: 'Orbitron', sans-serif;
 
 /* Color Variables */
-    
+    --col-first: #1d1716;
+    --col-first-tranc: #1d171628;
+    --col-second:#402a23;
+    --col-third: #a55233;
+    --col-fourth: #f3bc77;
+}
+
+.border-shadow {
+    border: 2px solid var(--col-second);
+    box-shadow: 0px 0px 3px var(--col-fourth);
+}
+
+body {
+    background: url(./images/background.jpeg);
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    overflow: hidden;
+    font-family: var(--font-exo-two);
+}
+
+#header {
+    width: 100%;
+    height: max(15vh, 70px);
+    position: absolute;
+    background-color: var(--col-first);
+    top: 0%;
+    left: 0%;
 }
