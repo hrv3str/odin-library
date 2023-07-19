@@ -8,6 +8,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Exo+2&family=Orbitron&display=swap" rel="stylesheet">
+    <script src="./scripts/script.js" defer></script>
 </head>
 <body>
     <div id="header"
@@ -28,50 +29,48 @@
         </div>
     </div>
     <div id="book-container">
-        <div class="book-card rounded border-shadow">
-            <p>title</p>
-            <p>author</p>
-            <p>pages</p>
-            <div class="border-shadow rounded button control">Not read</div>
-            <div class="border-shadow rounded button control">Remove</div>
-        </div>
+        
     </div>
-    <div class="form-screen no-visible">
-        <div id="book-form"
+    <div class="form-screen no-visible"
+        id="form-screen">
+        <form action="javascript:void(0)"
+            id="book-form"
             class="border-shadow rounded">
-            <form action="javascript:void(0)">
-                <label for="book-title">Book Title</label>
-                <input type="text"
-                    id="book-title"
-                    class="border-shadow"
-                    placeholder="Fight Club"
-                    required>
-                <label for="book-author">Book Author</label>
-                <input type="text"
-                    id="book-author"
-                    class="border-shadow"
-                    placeholder="Chuck Palahniuk"
-                    required>
-                <label for="num-pages">Quantity of Pages</label>
-                <input type="number"
-                    id="num-pages"
-                    class="border-shadow"
-                    placeholder="208">
-                <div class="centered">
-                    <label for="not-read"
-                        id="checkbox">
-                        not read
-                    </label>
-                    <input type="checkbox"
-                        id="not-read"
-                        class="border-shadow">
-                </div>
-                <button type="submit"
-                    class="button rounded border-shadow">
-                    Add book
-                </button>
-            </form>
-        </div>
+            <label for="book-title">Book Title</label>
+            <input type="text"
+                id="book-title"
+                name="title"
+                class="border-shadow"
+                placeholder="Fight Club"
+                required>
+            <label for="book-author">Book Author</label>
+            <input type="text"
+                id="book-author"
+                name="author"
+                class="border-shadow"
+                placeholder="Chuck Palahniuk"
+                required>
+            <label for="num-pages">Quantity of Pages</label>
+            <input type="number"
+                name="numPages"
+                id="num-pages"
+                class="border-shadow"
+                placeholder="208">
+            <div class="centered">
+                <label for="not-read"
+                    id="checkbox">
+                    not read
+                </label>
+                <input type="checkbox"
+                    id="not-read"
+                    name="notRead"
+                    class="border-shadow">
+            </div>
+            <button type="submit"
+                class="button rounded border-shadow">
+                Add book
+            </button>
+        </form>
     </div>
 </body>
 </html>

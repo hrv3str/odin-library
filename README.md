@@ -20,6 +20,9 @@ This project is part of the Odin Project curriculum and aims to create a library
 
 - This project is part of the Odin Project curriculum. Visit [theodinproject.com](https://www.theodinproject.com) for more information.
 
+- Used photo by <a href="https://unsplash.com/@allecgomes?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Allec Gomes</a> on <a href="https://unsplash.com/photos/a-close-up-of-a-wood-grain-texture-k3CDaaQ_Qas?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
+  
+
 ## Contributing
 
 Contributions are welcome! If you would like to improve this project or add new features, please follow these steps:
