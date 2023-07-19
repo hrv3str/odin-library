@@ -122,7 +122,10 @@ button[type="submit"] {
     align-items: flex-start;
     justify-content: flex-start;
     flex-wrap: wrap;
-    padding: 3rem;
+    padding: 2rem 6rem;
+    gap: 3rem;
+    overflow-y: scroll;
+    margin-bottom: 5rem;
 }
 
 .book-card {
