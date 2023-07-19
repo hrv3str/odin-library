@@ -14,6 +14,8 @@ function Book(title, author, numPages, notRead) {
     this.notRead = notRead;
 };
 
+
+// Update status text
 Book.prototype.updateNotReadButtonText = function() {
     if (this.notRead) {
       this.notReadButton.textContent = 'not read';
@@ -22,6 +24,7 @@ Book.prototype.updateNotReadButtonText = function() {
     }
   };
 
+// Create book card on page
 Book.prototype.createCard = function() {
     this.bookCard = document.createElement('div');
     this.bookCard.classList.add('book-card', 'rounded', 'border-shadow');
@@ -54,6 +57,7 @@ Book.prototype.createCard = function() {
     this.deleteButton.addEventListener('click', this.remove.bind(this));
 }
 
+// Toggle status
 Book.prototype.toggleRead = function() {
     switch (this.notRead) {
       case true:
@@ -66,10 +70,14 @@ Book.prototype.toggleRead = function() {
     this.updateNotReadButtonText();
   };
 
+
+//  Get book index in shelf array
 Book.prototype.getIndex = function() {
     return shelf.indexOf(this);
 };
 
+
+//  Remove book from the array
 Book.prototype.remove = function() {
     this.notReadButton.removeEventListener('click', this.toggleRead.bind(this));
     this.deleteButton.removeEventListener('click', this.remove.bind(this));
@@ -80,13 +88,14 @@ Book.prototype.remove = function() {
 
 // Adding the book
 function addBook() {
+// Getting form visible
     formScreen.classList.remove('no-visible');
-  
-    function submitForm() {
+//  Promise to handle the form
+    function submitForm() {  
       return new Promise(function(resolve, reject) {
         addForm.addEventListener('submit', function(event) {
           event.preventDefault();
-  
+//  Processing form input
           let title = addForm.elements.title.value;
           let author = addForm.elements.author.value;
           let numPages = addForm.elements.numPages.value;
@@ -96,11 +105,11 @@ function addBook() {
             reject('Please fill in all fields.');
             return;
           }
-          
+//  Creating new Book object with the form data and placing book card
           let newBook = new Book(title, author, numPages, notRead);
           shelf.push(newBook);
           newBook.createCard();
-          console.log(`shelf is now ${shelf}`)
+// Removing and reseting the form
           formScreen.classList.add('no-visible');
           addForm.reset();
           
