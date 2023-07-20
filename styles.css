@@ -117,7 +117,7 @@ button[type="submit"] {
 #book-container {
     margin-top: max(15vh, 70px);
     width: 100%;
-    height: calc(100vh - max(15vh, 70px));
+    height: calc(100vh - 2 *max(15vh, 70px));
     display: flex;
     align-items: flex-start;
     justify-content: flex-start;
@@ -125,7 +125,6 @@ button[type="submit"] {
     padding: 2rem 6rem;
     gap: 3rem;
     overflow-y: scroll;
-    margin-bottom: 5rem;
 }
 
 .book-card {
@@ -170,6 +169,16 @@ form {
     display: none;
 }
 
+#footer {
+    width: 100%;
+    height: max(8vh, 35px);
+    background-color: var(--col-first);
+}
+
+.book-card:last-child::after {
+    width: 100%;
+    height: max(16vh, 70px);
+}
 
 
 
