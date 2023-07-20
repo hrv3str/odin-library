@@ -173,11 +173,22 @@ form {
     width: 100%;
     height: max(8vh, 35px);
     background-color: var(--col-first);
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .book-card:last-child::after {
     width: 100%;
     height: max(16vh, 70px);
+}
+
+#footer > a {
+    text-decoration: none;
+    font-family: var(--font-orbitron);
+    margin: 0 1rem;
+    color: var(--col-fourth);
+    text-shadow: 0px 0px 5px var(--col-third);
 }
 
 
