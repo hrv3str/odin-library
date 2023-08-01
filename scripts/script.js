@@ -6,17 +6,17 @@ const shelf = [];
 const formScreen = document.getElementById('form-screen');
 const addForm = document.getElementById('book-form')
 
-// Book constructor
-function Book(title, author, numPages, notRead) {
+class Book {
+  // Book constructor
+  constructor(title, author, numPages, notRead) {
     this.title = title;
     this.author = author;
     this.numPages = Number(numPages);
     this.notRead = notRead;
-};
+  };
 
-
-// Update status text
-Book.prototype.updateNotReadButtonText = function() {
+  // update button text method
+  updateNotReadButtonText() {
     if (this.notRead) {
       this.notReadButton.textContent = 'not read';
     } else {
@@ -24,8 +24,8 @@ Book.prototype.updateNotReadButtonText = function() {
     }
   };
 
-// Create book card on page
-Book.prototype.createCard = function() {
+  // create book card method
+  createCard() {
     this.bookCard = document.createElement('div');
     this.bookCard.classList.add('book-card', 'rounded', 'border-shadow');
     
@@ -55,10 +55,10 @@ Book.prototype.createCard = function() {
 
     this.notReadButton.addEventListener('click', this.toggleRead.bind(this));
     this.deleteButton.addEventListener('click', this.remove.bind(this));
-}
+  }
 
-// Toggle status
-Book.prototype.toggleRead = function() {
+  // toggle 'not read' state
+  toggleRead() {
     switch (this.notRead) {
       case true:
         this.notRead = false;
@@ -70,20 +70,19 @@ Book.prototype.toggleRead = function() {
     this.updateNotReadButtonText();
   };
 
-
-//  Get book index in shelf array
-Book.prototype.getIndex = function() {
+  // get inedx of book
+  getIndex() {
     return shelf.indexOf(this);
-};
+  };
 
-
-//  Remove book from the array
-Book.prototype.remove = function() {
+  // remove book
+  remove() {
     this.notReadButton.removeEventListener('click', this.toggleRead.bind(this));
     this.deleteButton.removeEventListener('click', this.remove.bind(this));
     bookContainer.removeChild(this.bookCard);
     shelf.splice(this.getIndex(), 1);
     console.log(`shelf is now ${shelf}`);
+  }
 }
 
 // Adding the book
